@@ -1,0 +1,28 @@
+ICD3 (11) unter Win10-64 an Fujitsu P958 USB-Port 7:
+
+MPLAB ICD 3 detected
+Connecting to MPLAB ICD 3...
+Running self test...
+Self test completed
+Firmware Suite Version...... 01.20.14
+Firmware type......................dsPIC33F/24F/24H
+Downloading FPGA...(This may take up to 1 minute)
+AP download complete
+Running self test...
+Self test completed
+Downloading bootloader...
+Bootloader download complete
+Running self test...
+Self test completed
+Downloading RS...
+RS download complete
+Downloading AP...
+AP download complete
+Running self test...
+Self test completed
+Firmware Suite Version...... 01.26.71
+Firmware type......................PIC18F
+MPLAB ICD 3 Connected.
+Target Detected
+Device ID Revision = 00000007
+

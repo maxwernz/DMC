@@ -1,0 +1,230 @@
+Achtung: Dieser Inhalt wird nicht automatisch als Datei generiert,
+sondern muss manuell aus dem Fenster "Disassembly Listing" kopiert werden mit
+> Rechte Maustaste > Select all
+> Rechte Maustaste > Copy   in die Zwischenablage.
+
+
+---  C:\MCC18\v3_39\src\traditional\proc\p18F452.asm  --------------------------------------------
+  0138    0E00     MOVLW 0
+  013A    6EF3     MOVWF 0xff3, ACCESS
+  013C    EE00     LFSR 0, 0
+  013E    F000     NOP
+  0140    0E06     MOVLW 0x6
+  0142    D801     RCALL 0x146
+  0144    0012     RETURN 0
+  0146    60EA     CPFSLT 0xfea, ACCESS
+  0148    D002     BRA 0x14e
+  014A    6AEE     CLRF 0xfee, ACCESS
+  014C    D7FC     BRA 0x146
+  014E    50F3     MOVF 0xff3, W, ACCESS
+  0150    60E9     CPFSLT 0xfe9, ACCESS
+  0152    0012     RETURN 0
+  0154    6AEE     CLRF 0xfee, ACCESS
+  0156    D7FC     BRA 0x150
+---  C:\MCC18\v3_39\src\traditional\startup\c018i.c  ---------------------------------------------
+  0000    EFAC     GOTO 0x158
+  0002    F000     NOP
+  0004    0012     RETURN 0
+  0158    EE15     LFSR 0x1, 0x500
+  015A    F000     NOP
+  015C    EE25     LFSR 0x2, 0x500
+  015E    F000     NOP
+  0160    6AF8     CLRF 0xff8, ACCESS
+  0162    9C01     BCF 0x1, 0x6, ACCESS
+  0164    EC16     CALL 0x2c, 0
+  0166    F000     NOP
+  0168    ECBA     CALL 0x174, 0
+  016A    F000     NOP
+  016C    EC7F     CALL 0xfe, 0
+  016E    F000     NOP
+  0170    D7FB     BRA 0x168
+  0172    0012     RETURN 0
+  002C    0E2A     MOVLW 0x2a
+  002E    6EF6     MOVWF 0xff6, ACCESS
+  0030    0E00     MOVLW 0
+  0032    6EF7     MOVWF 0xff7, ACCESS
+  0034    0E00     MOVLW 0
+  0036    6EF8     MOVWF 0xff8, ACCESS
+  0038    0100     MOVLB 0
+  003A    0009     TBLRD*+
+  003C    50F5     MOVF 0xff5, W, ACCESS
+  003E    6F85     MOVWF 0x85, BANKED
+  0040    0009     TBLRD*+
+  0042    50F5     MOVF 0xff5, W, ACCESS
+  0044    6F86     MOVWF 0x86, BANKED
+  0046    E103     BNZ 0x4e
+  0048    6785     TSTFSZ 0x85, BANKED
+  004A    D001     BRA 0x4e
+  004C    D03D     BRA 0xc8
+  004E    0009     TBLRD*+
+  0050    50F5     MOVF 0xff5, W, ACCESS
+  0052    6F80     MOVWF 0x80, BANKED
+  0054    0009     TBLRD*+
+  0056    50F5     MOVF 0xff5, W, ACCESS
+  0058    6F81     MOVWF 0x81, BANKED
+  005A    0009     TBLRD*+
+  005C    50F5     MOVF 0xff5, W, ACCESS
+  005E    6F82     MOVWF 0x82, BANKED
+  0060    0009     TBLRD*+
+  0062    0009     TBLRD*+
+  0064    50F5     MOVF 0xff5, W, ACCESS
+  0066    6EE9     MOVWF 0xfe9, ACCESS
+  0068    0009     TBLRD*+
+  006A    50F5     MOVF 0xff5, W, ACCESS
+  006C    6EEA     MOVWF 0xfea, ACCESS
+  006E    0009     TBLRD*+
+  0070    0009     TBLRD*+
+  0072    0009     TBLRD*+
+  0074    50F5     MOVF 0xff5, W, ACCESS
+  0076    6F83     MOVWF 0x83, BANKED
+  0078    0009     TBLRD*+
+  007A    50F5     MOVF 0xff5, W, ACCESS
+  007C    6F84     MOVWF 0x84, BANKED
+  007E    0009     TBLRD*+
+  0080    0009     TBLRD*+
+  0082    CFF6     MOVFF 0xff6, 0x87
+  0084    F087     NOP
+  0086    CFF7     MOVFF 0xff7, 0x88
+  0088    F088     NOP
+  008A    CFF8     MOVFF 0xff8, 0x89
+  008C    F089     NOP
+  008E    C080     MOVFF 0x80, 0xff6
+  0090    FFF6     NOP
+  0092    C081     MOVFF 0x81, 0xff7
+  0094    FFF7     NOP
+  0096    C082     MOVFF 0x82, 0xff8
+  0098    FFF8     NOP
+  009A    0100     MOVLB 0
+  009C    5383     MOVF 0x83, F, BANKED
+  009E    E102     BNZ 0xa4
+  00A0    5384     MOVF 0x84, F, BANKED
+  00A2    E007     BZ 0xb2
+  00A4    0009     TBLRD*+
+  00A6    50F5     MOVF 0xff5, W, ACCESS
+  00A8    6EEE     MOVWF 0xfee, ACCESS
+  00AA    0783     DECF 0x83, F, BANKED
+  00AC    E2F8     BC 0x9e
+  00AE    0784     DECF 0x84, F, BANKED
+  00B0    D7F9     BRA 0xa4
+  00B2    C087     MOVFF 0x87, 0xff6
+  00B4    FFF6     NOP
+  00B6    C088     MOVFF 0x88, 0xff7
+  00B8    FFF7     NOP
+  00BA    C089     MOVFF 0x89, 0xff8
+  00BC    FFF8     NOP
+  00BE    0100     MOVLB 0
+  00C0    0785     DECF 0x85, F, BANKED
+  00C2    0E00     MOVLW 0
+  00C4    5B86     SUBWFB 0x86, F, BANKED
+  00C6    D7BF     BRA 0x46
+  00C8    0012     RETURN 0
+---  C:\MCC18\v3_39\src\traditional\stdclib\__init.c  --------------------------------------------
+  0174    0012     RETURN 0
+---  D:\TempE\_MPLAB Einführung 20-0504\PIC Projekte\PIC C18-Demo 20-0524 Überlauf LED_Pattern zulassen\C18 Demo.c
+1:                 // Hochschule Mannheim
+2:                 // Institut für Embedded Systems
+3:                 //
+4:                 // Demoprojekt für C18-Compiler:
+5:                 // LEDs als Binärzähler + Lautsprecher Toggle
+6:                 // oder binärer Zufallszahlen-Generator an den LED-Ports RB3..RB0
+7:                 //
+8:                 // Autor: Bernhard Pohlner 24.05.2020
+9:                 
+10:                #pragma config OSC=HS,WDT=OFF,LVP=OFF  // HS Oszillator, Watchdog Timer disabled, Low Voltage Programming
+11:                
+12:                #include "p18f452.h"
+13:                
+14:                /* globale Variablen */
+15:                unsigned char LED_Pattern;
+16:                unsigned int delay;
+17:                unsigned int count;	// als globale Variable
+18:                
+19:                void Delay(int delay)
+  00CA    CFD9     MOVFF 0xfd9, 0xfe6
+  00CC    FFE6     NOP
+  00CE    CFE1     MOVFF 0xfe1, 0xfd9
+  00D0    FFD9     NOP
+20:                {
+21:                	//unsigned int count;	// als lokale Variable
+22:                
+23:                	for (count=0;count<=delay;count++);	// Verzögerungsschleife
+  00D2    0100     MOVLB 0
+  00D4    6B8D     CLRF 0x8d, BANKED
+  00D6    6B8E     CLRF 0x8e, BANKED
+  00D8    0EFD     MOVLW 0xfd
+  00DA    CFDB     MOVFF 0xfdb, 0x2
+  00DC    F002     NOP
+  00DE    0EFE     MOVLW 0xfe
+  00E0    CFDB     MOVFF 0xfdb, 0x3
+  00E2    F003     NOP
+  00E4    518D     MOVF 0x8d, W, BANKED
+  00E6    5C02     SUBWF 0x2, W, ACCESS
+  00E8    518E     MOVF 0x8e, W, BANKED
+  00EA    5803     SUBWFB 0x3, W, ACCESS
+  00EC    E304     BNC 0xf6
+  00EE    2B8D     INCF 0x8d, F, BANKED
+  00F0    0E00     MOVLW 0
+  00F2    238E     ADDWFC 0x8e, F, BANKED
+  00F4    D7F1     BRA 0xd8
+24:                }
+  00F6    52E5     MOVF 0xfe5, F, ACCESS
+  00F8    CFE7     MOVFF 0xfe7, 0xfd9
+  00FA    FFD9     NOP
+  00FC    0012     RETURN 0
+25:                
+26:                void main (void)
+27:                {
+28:                	/* Init */
+29:                	PORTB=0;			// LED-Port RB3..RB0 rücksetzen und
+  00FE    6A81     CLRF 0xf81, ACCESS
+30:                	TRISB=0xF0;			// als Ausgänge
+  0100    0EF0     MOVLW 0xf0
+  0102    6E93     MOVWF 0xf93, ACCESS
+31:                
+32:                	PORTCbits.RC2=1;	// Lautsprecher macht einen Tick -
+  0104    8482     BSF 0xf82, 0x2, ACCESS
+33:                	TRISCbits.TRISC2=0;	// jetzt (Ausgang)
+  0106    9494     BCF 0xf94, 0x2, ACCESS
+34:                
+35:                	TRISAbits.TRISA4=1;	// Taster RA4 als Eingang (optional / per Reset schon gemacht)
+  0108    8892     BSF 0xf92, 0x4, ACCESS
+36:                
+37:                	LED_Pattern=0;		// LED-Bitmuster
+  010A    0100     MOVLB 0
+  010C    6B8A     CLRF 0x8a, BANKED
+38:                
+39:                	while(1)	// Main Loop
+  0134    D7EC     BRA 0x10e
+40:                	{
+41:                		while(PORTAbits.RA4);	// Warten bis Taster RA4 gedrückt
+  010E    B880     BTFSC 0xf80, 0x4, ACCESS
+  0110    D7FE     BRA 0x10e
+42:                
+43:                		LED_Pattern++;
+  0112    0100     MOVLB 0
+  0114    2B8A     INCF 0x8a, F, BANKED
+44:                		if (LED_Pattern==0x10) LED_Pattern=0;	// Überlauf
+  0116    0E10     MOVLW 0x10
+  0118    5D8A     SUBWF 0x8a, W, BANKED
+  011A    E101     BNZ 0x11e
+  011C    6B8A     CLRF 0x8a, BANKED
+45:                		PORTB= (PORTB & 0xF0) | LED_Pattern;
+  011E    0EF0     MOVLW 0xf0
+  0120    1481     ANDWF 0xf81, W, ACCESS
+  0122    118A     IORWF 0x8a, W, BANKED
+  0124    6E81     MOVWF 0xf81, ACCESS
+46:                
+47:                		PORTCbits.RC2=~PORTCbits.RC2;	// Lautsprecher Toggle
+  0126    7482     BTG 0xf82, 0x2, ACCESS
+48:                
+49:                		Delay(2);		// für SIM
+  0128    0E02     MOVLW 0x2
+  012A    6EE6     MOVWF 0xfe6, ACCESS
+  012C    6AE6     CLRF 0xfe6, ACCESS
+  012E    DFCD     RCALL 0xca
+  0130    52E5     MOVF 0xfe5, F, ACCESS
+  0132    52E5     MOVF 0xfe5, F, ACCESS
+50:                		//Delay(10000);	// auf der Hardware, um Wechsel der LEDs zu beobachten
+51:                	}
+52:                }
+  0136    0012     RETURN 0

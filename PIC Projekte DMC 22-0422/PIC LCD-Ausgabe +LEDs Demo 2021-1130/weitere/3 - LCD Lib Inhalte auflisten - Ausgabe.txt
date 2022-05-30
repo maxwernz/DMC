@@ -1,0 +1,72 @@
+Vor LCD-Erweiterung:
+______________________________________
+
+C:\Temp\_Update 21ws\Labor\microchip.com\3 MPLAB C18 LCD Lib-Erweiterung 2011-0419
+
+ Volume in Laufwerk C: hat keine Bezeichnung.
+ Volumeseriennummer: 2A20-0503
+
+ Verzeichnis von C:\Program Files (x86)\Microchip\mplabc18\v3.40\Lib
+
+09.06.2011  19:48           943.920 p18F452.lib
+09.06.2011  19:50           956.005 p18F4520.lib
+09.06.2011  19:51           956.167 p18F4523.lib
+09.06.2011  19:52           956.573 p18F4525.lib
+               4 Datei(en),      3.812.665 Bytes
+               0 Verzeichnis(se), 307.535.810.560 Bytes frei
+
+Vorhandene LCD-Module:
+(erweitert, wenn lcd.o + lcdgreen.o vorhanden sind)
+
+In p18f452.lib (aktive Library):
+Member: 'busyxlcd.o'               Size: 2286   Date: Thu Jun 09 20:48:44 2011
+Member: 'openxlcd.o'               Size: 4505   Date: Thu Jun 09 20:48:44 2011
+Member: 'putrxlcd.o'               Size: 3146   Date: Thu Jun 09 20:48:44 2011
+Member: 'putsxlcd.o'               Size: 2850   Date: Thu Jun 09 20:48:44 2011
+Member: 'wcmdxlcd.o'               Size: 2826   Date: Thu Jun 09 20:48:45 2011
+
+In p18f452_.lib (Sicherheitskopie):
+
+Drücken Sie eine beliebige Taste . . .
+
+______________________________________
+
+Nach LCD-Erweiterung:
+______________________________________
+
+C:\Temp\_Update 21ws\Labor\microchip.com\3 MPLAB C18 LCD Lib-Erweiterung 2011-0419
+
+ Volume in Laufwerk C: hat keine Bezeichnung.
+ Volumeseriennummer: 2A20-0503
+
+ Verzeichnis von C:\Program Files (x86)\Microchip\mplabc18\v3.40\Lib
+
+30.11.2021  15:46           990.270 p18f452.lib
+09.06.2011  19:50           956.005 p18F4520.lib
+09.06.2011  19:51           956.167 p18F4523.lib
+09.06.2011  19:52           956.573 p18F4525.lib
+09.06.2011  19:48           943.920 p18f452_.lib
+               5 Datei(en),      4.802.935 Bytes
+               0 Verzeichnis(se), 307.533.799.424 Bytes frei
+
+Vorhandene LCD-Module:
+(erweitert, wenn lcd.o + lcdgreen.o vorhanden sind)
+
+In p18f452.lib (aktive Library):
+Member: 'busyxlcd.o'               Size: 2702   Date: Fri Jul 20 17:27:59 2007
+Member: 'openxlcd.o'               Size: 5079   Date: Fri Jul 20 17:28:23 2007
+Member: 'putrxlcd.o'               Size: 3146   Date: Thu Jun 09 20:48:44 2011
+Member: 'putsxlcd.o'               Size: 2995   Date: Fri Jul 20 17:28:24 2007
+Member: 'wcmdxlcd.o'               Size: 2948   Date: Fri Jul 20 17:27:52 2007
+Member: 'lcd.o'                    Size: 17846  Date: Mon Aug 13 18:10:29 2007
+Member: 'lcdgreen.o'               Size: 26041  Date: Tue May 04 15:34:38 2010
+
+In p18f452_.lib (Sicherheitskopie):
+Member: 'busyxlcd.o'               Size: 2286   Date: Thu Jun 09 20:48:44 2011
+Member: 'openxlcd.o'               Size: 4505   Date: Thu Jun 09 20:48:44 2011
+Member: 'putrxlcd.o'               Size: 3146   Date: Thu Jun 09 20:48:44 2011
+Member: 'putsxlcd.o'               Size: 2850   Date: Thu Jun 09 20:48:44 2011
+Member: 'wcmdxlcd.o'               Size: 2826   Date: Thu Jun 09 20:48:45 2011
+
+Drücken Sie eine beliebige Taste . . .
+______________________________________
