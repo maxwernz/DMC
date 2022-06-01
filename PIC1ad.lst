@@ -1,4 +1,4 @@
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE  1
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00040 
                       00041 ;//***** Main Program *****
 000030                00042         ORG 0x30
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE  2
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -94,25 +94,24 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00071 
 000052                00072 LEDansteuern
 000052 84C2           00073         BSF ADCON0, 2, 0
-000054 94C2           00074         BCF ADCON0, 2, 0
-000056 50C4           00075         MOVF ADRESH, 0, 0       ;Wert aus ADCON1 ADRES H, vier hoechste Bit kopieren
-000058 38E8           00076         SWAPF WREG, 0, 0
-00005A 6E8A           00077         MOVWF LATB, 0           ; in PORT B LED <3:0> schreiben
-00005C EC32 F000      00078         CALL Zeitschleife
-000060 7482           00079         BTG PORTC, RC2, 0               ; Lautsprecher einlesen, invertieren, ausgeben
-000062 0012           00080         RETURN
-                      00081         
-000064                00082 Zeitschleife
-000064 0E0F           00083         MOVLW 0x0F
-000066                00084 Start
-000066 0000           00085         NOP ; zusaetzliche Zeitspanne
-000068 2CE8           00086         DECFSZ WREG, 0, 0
-00006A D7FD           00087         BRA Start
-00006C 0012           00088         RETURN
-                      00089 
-00006E D7ED           00090         BRA MainLoop ;//Do.. Forever  ; wird nicht erreicht
-                      00091         END
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE  3
+000054 50C4           00074         MOVF ADRESH, 0, 0       ;Wert aus ADCON1 ADRES H, vier hoechste Bit kopieren
+000056 38E8           00075         SWAPF WREG, 0, 0
+000058 6E81           00076         MOVWF PORTB, 0          ; in PORT B LED <3:0> schreiben
+00005A EC31 F000      00077         CALL Zeitschleife
+00005E 7482           00078         BTG PORTC, RC2, 0               ; Lautsprecher einlesen, invertieren, ausgeben
+000060 0012           00079         RETURN
+                      00080         
+000062                00081 Zeitschleife
+000062 0E64           00082         MOVLW 0x64
+000064                00083 Start
+000064 0000           00084         NOP ; zusaetzliche Zeitspanne
+000066 2CE8           00085         DECFSZ WREG, 0, 0
+000068 D7FD           00086         BRA Start
+00006A 0012           00087         RETURN
+                      00088 
+00006C D7EE           00089         BRA MainLoop ;//Do.. Forever  ; wird nicht erreicht
+                      00090         END
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE  3
 
 
 SYMBOL TABLE
@@ -171,7 +170,7 @@ CCP1M2                            00000002
 CCP1M3                            00000003
 CCP1X                             00000005
 CCP1Y                             00000004
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE  4
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE  4
 
 
 SYMBOL TABLE
@@ -230,7 +229,7 @@ D_NOT_A                           00000005
 EEADR                             00000FA9
 EECON1                            00000FA6
 EECON2                            00000FA7
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE  5
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE  5
 
 
 SYMBOL TABLE
@@ -289,7 +288,7 @@ INT2F                             00000001
 INT2IE                            00000004
 INT2IF                            00000001
 INT2IP                            00000007
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE  6
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE  6
 
 
 SYMBOL TABLE
@@ -348,7 +347,7 @@ LATD7                             00000007
 LATE                              00000F8D
 LATE0                             00000000
 LATE1                             00000001
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE  7
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE  7
 
 
 SYMBOL TABLE
@@ -407,7 +406,7 @@ PGD                               00000007
 PGM                               00000005
 PIE1                              00000F9D
 PIE2                              00000FA0
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE  8
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE  8
 
 
 SYMBOL TABLE
@@ -466,7 +465,7 @@ RB4                               00000004
 RB5                               00000005
 RB6                               00000006
 RB7                               00000007
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE  9
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE  9
 
 
 SYMBOL TABLE
@@ -525,7 +524,7 @@ SDI                               00000004
 SDO                               00000005
 SEN                               00000000
 SMP                               00000007
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE 10
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE 10
 
 
 SYMBOL TABLE
@@ -568,7 +567,7 @@ SWDTE                             00000000
 SWDTEN                            00000000
 SYNC                              00000004
 Schleife                          0000004A
-Start                             00000066
+Start                             00000064
 T08BIT                            00000006
 T0CKI                             00000004
 T0CON                             00000FD5
@@ -584,7 +583,7 @@ T1CKI                             00000000
 T1CKPS0                           00000004
 T1CKPS1                           00000005
 T1CON                             00000FCD
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE 11
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE 11
 
 
 SYMBOL TABLE
@@ -643,7 +642,7 @@ TOSU                              00000FFF
 TOUTPS0                           00000003
 TOUTPS1                           00000004
 TOUTPS2                           00000005
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE 12
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE 12
 
 
 SYMBOL TABLE
@@ -702,7 +701,7 @@ TXIP                              00000004
 TXREG                             00000FAD
 TXSTA                             00000FAC
 UA                                00000001
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE 13
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE 13
 
 
 SYMBOL TABLE
@@ -718,7 +717,7 @@ WREG                              00000FE8
 WREN                              00000002
 WRERR                             00000003
 Z                                 00000002
-Zeitschleife                      00000064
+Zeitschleife                      00000062
 _BORV_20                          000000FF
 _BORV_20_2L                       000000FF
 _BORV_27_2L                       000000FB
@@ -761,7 +760,7 @@ _EBTR0_OFF_7L                     000000FF
 _EBTR0_ON_7L                      000000FE
 _EBTR1_OFF_7L                     000000FF
 _EBTR1_ON_7L                      000000FD
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE 14
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE 14
 
 
 SYMBOL TABLE
@@ -820,7 +819,7 @@ _WRT1_ON_6L                       000000FD
 _WRT2_OFF_6L                      000000FF
 _WRT2_ON_6L                       000000FB
 _WRT3_OFF_6L                      000000FF
-MPASM  5.42                        PIC1AD.ASM   6-2-2022  0:37:59         PAGE 15
+MPASM  5.42                        PIC1AD.ASM   6-1-2022  22:07:03         PAGE 15
 
 
 SYMBOL TABLE
@@ -842,13 +841,13 @@ __DEBUG                           1
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
 
 0000 : XXXX------------ ---------------- ---------------- XXXXXXXXXXXXXXXX
-0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX ----------------
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXX-- ----------------
 0000 : -XXX-XX-XXXXXX-- ---------------- ---------------- ----------------
 
 All other memory blocks unused.
 
-Program Memory Bytes Used:    79
-Program Memory Bytes Free: 32689
+Program Memory Bytes Used:    77
+Program Memory Bytes Free: 32691
 
 
 Errors   :     0

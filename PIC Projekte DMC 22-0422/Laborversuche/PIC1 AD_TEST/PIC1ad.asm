@@ -71,15 +71,16 @@ Schleife
 
 LEDansteuern
 	BSF ADCON0, 2, 0
+	BCF ADCON0, 2, 0
 	MOVF ADRESH, 0, 0 	;Wert aus ADCON1 ADRES H, vier hoechste Bit kopieren
 	SWAPF WREG, 0, 0
-	MOVWF TRISB, 0 		; in PORT B LED <3:0> schreiben
+	MOVWF LATB, 0 		; in PORT B LED <3:0> schreiben
 	CALL Zeitschleife
 	BTG PORTC, RC2, 0		; Lautsprecher einlesen, invertieren, ausgeben
 	RETURN
 	
 Zeitschleife
-	MOVLW 0x64
+	MOVLW 0x0F
 Start
 	NOP ; zusaetzliche Zeitspanne
 	DECFSZ WREG, 0, 0
