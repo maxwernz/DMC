@@ -43,8 +43,49 @@ IntVectLow
 ;//Initialisation Code
 Init
 
+	CLRF PORTA
+	MOVLW 0x7F ;// 7 PINS; alles Eingaenge
+	MOVWF TRISA
+
+	CLRF PORTB
+	MOVLW 0xF0
+	MOVWF TRISB
+
+	CLRF PORTC
+	MOVLW 0XFB
+	MOVWF TRISC
+
+	MOVLW 0x81
+	MOVWF ADCON0
+	MOVLW 0x0E
+	MOVWF ADCON1
+
 ;//Main Application Code
 MainLoop
 
-	BRA MainLoop ;//Do.. Forever
+Schleife
+	BTFSS PORTA, RA4
+	CALL LEDansteuern
+	BRA Schleife
+	;RETURN ; wird nie aufgerufen
+
+LEDansteuern
+	BSF ADCON0, 2, 0
+	BCF ADCON0, 2, 0
+	MOVF ADRESH, 0, 0 	;Wert aus ADCON1 ADRES H, vier hoechste Bit kopieren
+	SWAPF WREG, 0, 0
+	MOVWF LATB, 0 		; in PORT B LED <3:0> schreiben
+	CALL Zeitschleife
+	BTG PORTC, RC2, 0		; Lautsprecher einlesen, invertieren, ausgeben
+	RETURN
+	
+Zeitschleife
+	MOVLW 0x0F
+Start
+	NOP ; zusaetzliche Zeitspanne
+	DECFSZ WREG, 0, 0
+	BRA Start
+	RETURN
+
+	BRA MainLoop ;//Do.. Forever  ; wird nicht erreicht
 	END
