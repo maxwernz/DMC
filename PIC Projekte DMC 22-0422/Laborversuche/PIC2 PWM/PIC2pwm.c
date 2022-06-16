@@ -36,7 +36,12 @@ unsigned char leer[]          ="                ";
 void init()
 {
 	// IO Ports
+	TRISA = 0x71;
+	TRISC = 0xFB;
+	TRISD = 0xF0;  //Display Input Output?
+	TRISE = 0x07;  //Nur 3 Bits
 	// RC2 als Ausgang für PWM
+
 
 #ifndef Simulator	// LCD-Initialisierung mit Portzuweisung RA<3:1> und RD<3:0>
 	lcd_init();		// Alle LCD-Funktionen werden für die Simulation herausgenommen,
@@ -44,11 +49,14 @@ void init()
 #endif
 
 	// CCP1 als PWM Modul konfigurieren
+	CCP1CON = 0x0F;
 
 	// Timer 2 Einstellungen
-
+	T2CON = 0x04; //Prescaler 1
+	//T2CON = 0x07; //Prescaler 16
 	// A/D-Umsetzer Einstellungen
-
+	ADCON0 = 0xA1;
+	ADCON1 = 0;
 }
 
 void main()
@@ -57,28 +65,34 @@ void main()
 	while(1)
 	{
 		// A/D-Umsetzung durchführen
-
-
+		ADCON0bits.GO = 1;
+		while (ADCON0bits.GO) {}
 		// A/D-Converter: Werteverarbeitung Kanal 0 oder 7
 		//Analogkanal 0 wurde eingelesen (Poti Sollwert)
 		if(!ADCON0bits.CHS2 && !ADCON0bits.CHS1 && !ADCON0bits.CHS0)
 		{
 			// Berechnung von x
 				// Duty Cycle für PWM  einstellen
-
-
-
+				CCP1 = ADRES;
+				int x = ADRES;
+				
 
 				// Channel 7 auswählen
+				ADCON0bits.CH2 = 1;
+				ADCON0bits.CH1 = 1;
+				ADCON0bits.CH0 = 1;
 		}
 		//Analogkanal 7 wurde eingelesen (RC-Ausgang Istwert)
 		else if(ADCON0bits.CHS2 && ADCON0bits.CHS1 && ADCON0bits.CHS0)
 		{
 				// Berechnung von y
-
-
+				int y = RE2;
+				
 
 				// Channel 0 auswählen
+				ADCON0bits.CH2 = 0;
+				ADCON0bits.CH1 = 0;
+				ADCON0bits.CH0 = 0;
 			}
 
 #ifndef Simulator
