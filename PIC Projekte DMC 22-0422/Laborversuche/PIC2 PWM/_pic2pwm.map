@@ -1,5 +1,5 @@
 MPLINK 4.40, Linker
-Linker Map File - Created Thu Jun 16 23:45:55 2022
+Linker Map File - Created Mon Jun 20 23:28:01 2022
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -7,18 +7,18 @@ Linker Map File - Created Thu Jun 16 23:45:55 2022
                _entry_scn       code   0x000000    program   0x000006
                    .cinit    romdata   0x00002a    program   0x00000e
                _cinit_scn       code   0x000038    program   0x00009e
-          .code_pic2pwm.o       code   0x0000d6    program   0x000048
-                    .code       code   0x00011e    program   0x000020
-             _startup_scn       code   0x00013e    program   0x00001c
-           .code___init.o       code   0x00015a    program   0x000002
-        .romdata___init.o    romdata   0x00015c    program   0x000000
-             .stringtable    romdata   0x00015c    program   0x000000
-       .romdata_pic2pwm.o    romdata   0x00015c    program   0x000000
-       .idata_pic2pwm.o_i    romdata   0x00015c    program   0x00003d
-         .romdata_c018i.o    romdata   0x00015c    program   0x000000
-        .idata___init.o_i    romdata   0x000199    program   0x000000
-         .idata_c018i.o_i    romdata   0x000199    program   0x000000
-            .code_c018i.o       code   0x00019a    program   0x000000
+          .code_pic2pwm.o       code   0x0000d6    program   0x00008e
+                    .code       code   0x000164    program   0x000020
+             _startup_scn       code   0x000184    program   0x00001c
+           .code___init.o       code   0x0001a0    program   0x000002
+        .romdata___init.o    romdata   0x0001a2    program   0x000000
+             .stringtable    romdata   0x0001a2    program   0x000000
+       .romdata_pic2pwm.o    romdata   0x0001a2    program   0x000000
+       .idata_pic2pwm.o_i    romdata   0x0001a2    program   0x00003d
+         .romdata_c018i.o    romdata   0x0001a2    program   0x000000
+        .idata___init.o_i    romdata   0x0001df    program   0x000000
+         .idata_c018i.o_i    romdata   0x0001df    program   0x000000
+            .code_c018i.o       code   0x0001e0    program   0x000000
  .config_300001_pic2pwm.o    romdata   0x300001    program   0x000001
  .config_300003_pic2pwm.o    romdata   0x300003    program   0x000001
  .config_300006_pic2pwm.o    romdata   0x300006    program   0x000001
@@ -39,55 +39,57 @@ Linker Map File - Created Thu Jun 16 23:45:55 2022
                                Start         End      
                            ---------   ---------      
                             0x000000    0x000005      
-                            0x00002a    0x000198      
+                            0x00002a    0x0001de      
                             0x300001    0x300001      
                             0x300003    0x300003      
                             0x300006    0x300006      
-            376 out of 33048 program addresses used, program memory utilization is 1%
+            446 out of 33048 program addresses used, program memory utilization is 1%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-         ___else_lbl00010   0x0000f2    program     static                          
-           ___if_lbl00008   0x000104    program     static                          
-           ___if_lbl00009   0x000104    program     static                          
-           ___if_lbl00013   0x00011a    program     static                          
+         ___else_lbl00012   0x00012a    program     static                          
+           ___if_lbl00010   0x00014a    program     static                          
+           ___if_lbl00011   0x00014a    program     static                          
+           ___if_lbl00015   0x000160    program     static                          
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x00011c    program     static                          
-       ___return_lbl00001   0x000158    program     static                          
+       ___return_lbl00001   0x000162    program     static                          
+       ___return_lbl00001   0x00019e    program     static                          
        ___return_lbl00002   0x0000d4    program     static                          
-        ___while_lbl00002   0x0000de    program     static                          
-        ___while_lbl00003   0x00011c    program     static                          
-        ___while_lbl00011   0x000104    program     static                          
-        ___while_lbl00012   0x000108    program     static                          
+        ___while_lbl00002   0x0000fa    program     static                          
+        ___while_lbl00003   0x000162    program     static                          
+        ___while_lbl00004   0x0000fc    program     static                          
+        ___while_lbl00005   0x000100    program     static                          
+        ___while_lbl00013   0x00014a    program     static                          
+        ___while_lbl00014   0x00014e    program     static                          
                __config_0   0x300001    program     static X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
                __config_1   0x300003    program     static X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
                __config_2   0x300006    program     static X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
-                   __init   0x00015a    program     extern C:\MCC18\v3_39\src\traditional\stdclib\__init.c
-               __tmplbl_0   0x0000f0    program     static                          
-               __tmplbl_1   0x0000ea    program     static                          
-               __tmplbl_2   0x0000e4    program     static                          
-               __tmplbl_3   0x000104    program     static                          
-               __tmplbl_4   0x0000fe    program     static                          
-               __tmplbl_5   0x0000f8    program     static                          
-            __zero_memory   0x00011e    program     extern C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
+                   __init   0x0001a0    program     extern C:\MCC18\v3_39\src\traditional\stdclib\__init.c
+               __tmplbl_0   0x000112    program     static                          
+               __tmplbl_1   0x00010c    program     static                          
+               __tmplbl_2   0x000106    program     static                          
+               __tmplbl_3   0x00013c    program     static                          
+               __tmplbl_4   0x000136    program     static                          
+               __tmplbl_5   0x000130    program     static                          
+            __zero_memory   0x000164    program     extern C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
                 _do_cinit   0x000038    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
-                 _startup   0x00013e    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
-                compare_l   0x000134    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
+                 _startup   0x000184    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                compare_l   0x00017a    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
                 copy_loop   0x0000aa    program     static                          
             copy_one_byte   0x0000b0    program     static                          
                      done   0x0000d4    program     static                          
              done_copying   0x0000be    program     static                          
                      init   0x0000d6    program     extern X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
-                     loop   0x00014e    program     static                          
-                   loop_h   0x00012c    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
-                   loop_l   0x000136    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
-                     main   0x0000dc    program     extern X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
+                     loop   0x000194    program     static                          
+                   loop_h   0x000172    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
+                   loop_l   0x00017c    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
+                     main   0x0000f8    program     extern X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
                      test   0x000052    program     static                          
-               zero_block   0x00012c    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
+               zero_block   0x000172    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
                    ADCON0   0x000fc2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
                ADCON0bits   0x000fc2       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
                    ADCON1   0x000fc1       data     extern C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
@@ -284,31 +286,33 @@ Linker Map File - Created Thu Jun 16 23:45:55 2022
                      done   0x0000d4    program     static                          
        ___return_lbl00002   0x0000d4    program     static                          
                      init   0x0000d6    program     extern X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
-                     main   0x0000dc    program     extern X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
-        ___while_lbl00002   0x0000de    program     static                          
-               __tmplbl_2   0x0000e4    program     static                          
-               __tmplbl_1   0x0000ea    program     static                          
-               __tmplbl_0   0x0000f0    program     static                          
-         ___else_lbl00010   0x0000f2    program     static                          
-               __tmplbl_5   0x0000f8    program     static                          
-               __tmplbl_4   0x0000fe    program     static                          
-               __tmplbl_3   0x000104    program     static                          
-           ___if_lbl00008   0x000104    program     static                          
-           ___if_lbl00009   0x000104    program     static                          
-        ___while_lbl00011   0x000104    program     static                          
-        ___while_lbl00012   0x000108    program     static                          
-           ___if_lbl00013   0x00011a    program     static                          
-       ___return_lbl00001   0x00011c    program     static                          
-        ___while_lbl00003   0x00011c    program     static                          
-            __zero_memory   0x00011e    program     extern C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
-               zero_block   0x00012c    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
-                   loop_h   0x00012c    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
-                compare_l   0x000134    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
-                   loop_l   0x000136    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
-                 _startup   0x00013e    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
-                     loop   0x00014e    program     static                          
-       ___return_lbl00001   0x000158    program     static                          
-                   __init   0x00015a    program     extern C:\MCC18\v3_39\src\traditional\stdclib\__init.c
+                     main   0x0000f8    program     extern X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
+        ___while_lbl00002   0x0000fa    program     static                          
+        ___while_lbl00004   0x0000fc    program     static                          
+        ___while_lbl00005   0x000100    program     static                          
+               __tmplbl_2   0x000106    program     static                          
+               __tmplbl_1   0x00010c    program     static                          
+               __tmplbl_0   0x000112    program     static                          
+         ___else_lbl00012   0x00012a    program     static                          
+               __tmplbl_5   0x000130    program     static                          
+               __tmplbl_4   0x000136    program     static                          
+               __tmplbl_3   0x00013c    program     static                          
+           ___if_lbl00010   0x00014a    program     static                          
+        ___while_lbl00013   0x00014a    program     static                          
+           ___if_lbl00011   0x00014a    program     static                          
+        ___while_lbl00014   0x00014e    program     static                          
+           ___if_lbl00015   0x000160    program     static                          
+        ___while_lbl00003   0x000162    program     static                          
+       ___return_lbl00001   0x000162    program     static                          
+            __zero_memory   0x000164    program     extern C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
+               zero_block   0x000172    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
+                   loop_h   0x000172    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
+                compare_l   0x00017a    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
+                   loop_l   0x00017c    program     static C:\MCC18\v3_39\src\traditional\proc\p18F452.asm
+                 _startup   0x000184    program     extern C:\MCC18\v3_39\src\traditional\startup\c018i.c
+                     loop   0x000194    program     static                          
+       ___return_lbl00001   0x00019e    program     static                          
+                   __init   0x0001a0    program     extern C:\MCC18\v3_39\src\traditional\stdclib\__init.c
                __config_0   0x300001    program     static X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
                __config_1   0x300003    program     static X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c
                __config_2   0x300006    program     static X:\DMC\PIC Projekte DMC 22-0422\Laborversuche\PIC2 PWM\pic2pwm.c

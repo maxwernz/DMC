@@ -49,13 +49,14 @@ void init()
 #endif
 
 	// CCP1 als PWM Modul konfigurieren
+	PR2 = 0xFF; //Periodendauer einstellen
 	CCP1CON = 0x0F;
 
 	// Timer 2 Einstellungen
 	T2CON = 0x04; //Prescaler 1
 	//T2CON = 0x07; //Prescaler 16
 	// A/D-Umsetzer Einstellungen
-	ADCON0 = 0xA1;
+	ADCON0 = 0x81;
 	ADCON1 = 0;
 }
 
@@ -73,26 +74,25 @@ void main()
 		{
 			// Berechnung von x
 				// Duty Cycle für PWM  einstellen
-				CCP1 = ADRES;
-				int x = ADRES;
-				
+				x = ADRES;
+				CCPR1 = x;
 
 				// Channel 7 auswählen
-				ADCON0bits.CH2 = 1;
-				ADCON0bits.CH1 = 1;
-				ADCON0bits.CH0 = 1;
+				ADCON0bits.CHS2 = 1;
+				ADCON0bits.CHS1 = 1;
+				ADCON0bits.CHS0 = 1;
 		}
 		//Analogkanal 7 wurde eingelesen (RC-Ausgang Istwert)
 		else if(ADCON0bits.CHS2 && ADCON0bits.CHS1 && ADCON0bits.CHS0)
 		{
 				// Berechnung von y
-				int y = RE2;
+				y = ADRES;
 				
 
 				// Channel 0 auswählen
-				ADCON0bits.CH2 = 0;
-				ADCON0bits.CH1 = 0;
-				ADCON0bits.CH0 = 0;
+				ADCON0bits.CHS2 = 0;
+				ADCON0bits.CHS1 = 0;
+				ADCON0bits.CHS0 = 0;
 			}
 
 #ifndef Simulator
