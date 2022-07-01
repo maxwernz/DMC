@@ -36,9 +36,8 @@ unsigned char leer[]          ="                ";
 void init()
 {
 	// IO Ports
-	TRISA = 0x71;
+
 	TRISC = 0xFB;
-	TRISD = 0xF0;  //Display Input Output?
 	TRISE = 0x07;  //Nur 3 Bits
 	// RC2 als Ausgang für PWM
 
@@ -49,7 +48,7 @@ void init()
 #endif
 
 	// CCP1 als PWM Modul konfigurieren
-	PR2 = 0xFF; //Periodendauer einstellen
+
 	CCP1CON = 0x0F;
 
 	// Timer 2 Einstellungen
